@@ -98,6 +98,8 @@ enable-ipc = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/fs] 
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
@@ -234,10 +236,21 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "󰧑 "
+format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %gb_free%
+format = <label><bar-used>
+
+bar-used-indicator =
+bar-used-width = 10
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
 
 [module/wlan]
 type = internal/network
@@ -398,8 +411,8 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 󱃂
-ramp-1 = 
-ramp-2 = 
+ramp-1 = 󱃃
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
