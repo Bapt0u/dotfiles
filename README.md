@@ -19,3 +19,13 @@ Personnal collection of dotfiles.
 ```bash
 sudo apt install i3wm rofi polybar kitty nitrogen dunst
 ```
+
+## Brightness 
+
+In order to adjust screen brightness, add the current user to the group `video`. Logout, login.  
+
+```bash
+sudo apt install brightnessctl
+sudo adduser $USER video
+logout
+```
