@@ -216,3 +216,7 @@ bindsym $mod+l exec "$HOME/.config/polybar/scripts/power.sh"
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# Screenshot keybind
+bindsym $mod+shift+s exec --no-startup-id flameshot gui
+
+
