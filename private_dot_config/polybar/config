@@ -75,7 +75,7 @@ font-0 = "JetBrainsMono Nerd Font:weight=bold:size=11"
 font-1 = "Symbols Nerd Font Mono:size=11"
 
 modules-left = i3 cpu fs temperature memory
-modules-right = filesystem alsa wlan eth battery date
+modules-right = filesystem system-bluetoothctl alsa wlan eth battery date
 
 tray-position = right
 tray-padding = 8
@@ -115,6 +115,8 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+format-mounted-underline = #a3b18a
+format-unmounted-underline = ${self.format-mounted-underline}
 
 [module/bspwm]
 type = internal/bspwm
@@ -216,7 +218,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #e63946
 label = %percentage:2%%
 
 [module/memory]
@@ -224,7 +226,7 @@ type = internal/memory
 interval = 2
 format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #a8dadc
 label = %gb_free%
 format = <label><bar-used>
 
@@ -244,7 +246,7 @@ interface = wlp5s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = #457b9d
 # label-connected = %essid%
 label-connected = %essid% (%local_ip%)
 ; format-disconnected =
@@ -288,49 +290,19 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #a8dadc
 
 label = %date% %time%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-use-ui-max = 100%
-format-volume = <label-volume> <ramp-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
-
-label-muted = 󰖁 muted
-label-muted-foreground = #666
-
-; RAMP Config
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-; BAR Config
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 ; https://github.com/polybar/polybar/wiki/Module:-alsa
 type = internal/alsa
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <label-volume> 
+format-prefix-foreground = ${colors.foreground-alt}
+format-volume-underline = #a8dadc
+format-muted-underline = #a8dadc
+
+label-volume = vol. %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-foreground = ${colors.foreground-alt}
@@ -357,6 +329,8 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
+
+
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -366,7 +340,7 @@ low-at = 15
 poll-interval = 5
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #a3b18a
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -398,7 +372,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #e63946
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -462,3 +436,10 @@ content-font = 2
 content-foreground = ${colors.arch-color}
 content-margin = 0
 click-left = "~/Scripts/power.sh"
+
+[module/system-bluetoothctl]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetoothctl.sh
+tail = true
+click-left = ~/.config/polybar/scripts/bluetoothctl.sh --toggle &
+format-underline = #457b9d
