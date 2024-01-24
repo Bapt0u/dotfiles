@@ -1,0 +1,4 @@
+alias gc="git commit"
+alias gp="git push"
+alias hashivault=". hashivault"
+alias kubectl="minikube kubectl --"
