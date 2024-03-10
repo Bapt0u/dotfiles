@@ -21,7 +21,9 @@ bluetooth_print() {
                     fi
 
                     counter=$((counter + 1))
-                fi
+	    	else
+		    printf " Off"
+		fi
             done
 
             printf '\n'

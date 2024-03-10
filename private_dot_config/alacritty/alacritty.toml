@@ -17,3 +17,4 @@ bindings = [
   { mouse = "Right", action = "Paste" }
 ]
 hide_when_typing = true
+
