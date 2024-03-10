@@ -8,7 +8,7 @@ Personnal collection of dotfiles.
 - polybar
 - rofi
 - dunst
-- kitty
+- alacritty
 - zsh
 - nitrogen 
 - picom
