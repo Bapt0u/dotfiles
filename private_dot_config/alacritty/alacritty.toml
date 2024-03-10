@@ -1,0 +1,19 @@
+import = ["~/.config/alacritty/tomorrow_night.toml"]
+
+[window]
+padding = { x = 7, y = 6 }
+opacity = 0.99
+
+[font]
+size = 8
+normal = { family = "JetBrainsMono NF", style = "Regular"}
+
+[cursor]
+style = {shape = "Underline", blinking = "Off"}
+unfocused_hollow = false
+
+[mouse]
+bindings = [
+  { mouse = "Right", action = "Paste" }
+]
+hide_when_typing = true
