@@ -17,23 +17,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
-# +-------------+
-# | User Config |
-# +-------------+
-
-export LANG=en_US.UTF-8
-# export ARCHFLAGS="-arch x86_64"
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
-
-# pyenv setup
-[[ -d pyenv ]] && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
-
 # +-----------------------------+
 # | Environment variable Config |
 # +-----------------------------+
@@ -49,6 +32,23 @@ export EDITOR="$VISUAL"
 export KUBECONFIG=$HOME/.kube/config
 
 
+# +-------------+
+# | User Config |
+# +-------------+
+
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
+# pyenv setup
+[[ $+command[pyenv] ]] && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+
+
 # +----------------------+
 # | User tool completion |
 # +----------------------+
@@ -58,7 +58,6 @@ export KUBECONFIG=$HOME/.kube/config
 source ~/.oh-my-zsh/completion/*
 [[ -d kubectl ]] && source <(kubectl completion zsh)
 
-
 # +--------------+
 # | User aliases |
 # +--------------+
@@ -67,3 +66,8 @@ alias setus="setxkbmap us"
 alias setfr="setxkbmap fr"
 # alias kubectl="minikube kubectl --"
 alias k="kubectl"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
