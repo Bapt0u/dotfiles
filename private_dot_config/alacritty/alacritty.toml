@@ -6,7 +6,9 @@ opacity = 0.99
 
 [font]
 size = 8
-normal = { family = "JetBrainsMono NF", style = "Regular"}
+
+[font.normal]
+family = "JetBrainsMono Nerd Font" 
 
 [cursor]
 style = {shape = "Underline", blinking = "Off"}
