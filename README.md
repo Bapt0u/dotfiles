@@ -12,12 +12,12 @@ Personnal collection of dotfiles managed by GNU Stow.
 - zsh
 - nitrogen 
 - picom
-- chezmoi
+- stow
 
 ## Requirements (Ubuntu)
 
 ```bash
-sudo apt install i3wm rofi polybar kitty nitrogen dunst
+sudo apt install i3wm rofi polybar kitty nitrogen dunst stow
 ```
 
 ## Brightness 
