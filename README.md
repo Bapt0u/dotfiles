@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personnal collection of dotfiles. 
+Personnal collection of dotfiles managed by GNU Stow.
 
 ## Components
 
@@ -8,7 +8,7 @@ Personnal collection of dotfiles.
 - polybar
 - rofi
 - dunst
-- alacritty
+- kitty 
 - zsh
 - nitrogen 
 - picom
@@ -29,3 +29,12 @@ sudo apt install brightnessctl
 sudo adduser $USER video
 logout
 ```
+
+## Tmux
+
+Install the Tmux Plugin Manager
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
