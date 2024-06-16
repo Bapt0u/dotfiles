@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/nvim/bin:$HOME/.local/kitty.app/bin
+export PATH=$PATH:~/.binenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 export GPG_TTY=$(tty)
@@ -67,9 +68,15 @@ alias setus="setxkbmap us"
 alias setfr="setxkbmap fr"
 # alias kubectl="minikube kubectl --"
 alias k="kubectl"
+alias n="nvim"
+alias c="clear"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [[ $TMUX == "" ]]; then
+  tmux new -s perso -c ~
+fi
 
 nerdfetch
