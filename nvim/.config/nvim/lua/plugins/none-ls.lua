@@ -11,7 +11,7 @@ return {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.diagnostics.ansiblelint,
---        null_ls.builtins.formatting.ansible-language-server,
+        --        null_ls.builtins.formatting.ansible-language-server,
         null_ls.builtins.completion.spell,
         -- require("none-ls.diagnostics.eslint") -- requires none-ls-extras.nvim
       },
@@ -19,3 +19,4 @@ return {
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
   end,
 }
+
