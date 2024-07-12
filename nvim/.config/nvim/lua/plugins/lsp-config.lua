@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ansiblels", "gopls", "pyright" },
+        ensure_installed = { "lua_ls", "ansiblels", "gopls", "pyright", "yamlls", "jsonls", "ruff" },
       })
     end,
   },
@@ -24,7 +24,32 @@ return {
       lspconfig.pyright.setup({
         capabilities = capabilities,
       })
+      lspconfig.ruff.setup({})
       lspconfig.ansiblels.setup({})
+      lspconfig.yamlls.setup({
+        settings = {
+          yaml = {
+            schemaStore = {
+              url = "https://www.schemastore.org/api/json/catalog.json",
+              enable = true,
+            },
+          },
+        },
+      })
+      lspconfig.jsonls.setup({
+        settings = {
+          json = {
+            schemas = require("schemastore").json.schemas({
+              select = {
+                "Renovate",
+                "GitHub Workflow Template Properties",
+              },
+            }),
+            validate = { enable = true },
+          },
+        },
+      })
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
@@ -32,4 +57,3 @@ return {
     end,
   },
 }
-
