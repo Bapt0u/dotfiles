@@ -10,6 +10,7 @@ return {
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+        null_ls.builtins.diagnostics.yamlfmt,
         null_ls.builtins.diagnostics.ansiblelint,
         --        null_ls.builtins.formatting.ansible-language-server,
         null_ls.builtins.completion.spell,

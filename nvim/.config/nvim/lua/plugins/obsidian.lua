@@ -24,7 +24,7 @@ return {
       -- dir = "~/vaults/work",
 
       -- Optional, if you keep notes in a specific subdirectory of your vault.
-      notes_subdir = "notes",
+      -- notes_subdir = "notes",
 
       -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
       -- levels defined by "vim.log.levels.*".
@@ -32,7 +32,7 @@ return {
 
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
-        folder = "notes/dailies",
+        folder = "dailies",
         -- Optional, if you want to change the date format for the ID of daily notes.
         date_format = "%Y-%m-%d",
         -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -44,7 +44,7 @@ return {
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
         -- Set to false to disable completion.
-        nvim_cmp = true,
+        -- nvim_cmp = true,
         -- Trigger completion at 2 chars.
         min_chars = 2,
       },
