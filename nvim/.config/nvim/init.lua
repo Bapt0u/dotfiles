@@ -23,6 +23,7 @@ vim.lsp.enable({
   "ansible-language-server",
   "yaml-language-server",
   "jsonls",
+  "rust-analyzer",
 })
 
 -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

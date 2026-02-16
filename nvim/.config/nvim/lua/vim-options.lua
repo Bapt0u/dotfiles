@@ -11,8 +11,7 @@ vim.cmd("set noeol")
 vim.cmd("set completeopt=noselect,menuone,popup")
 
 -- Enable rounded borders in floating windows
--- vim.o.winborder = 'rounded'
-vim.o.winborder = "none"
+vim.o.winborder = 'rounded'
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.cmd("set signcolumn=yes:1")
