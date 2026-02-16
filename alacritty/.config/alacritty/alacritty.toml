@@ -5,9 +5,9 @@ import = [
 [window]
 padding = { x = 10, y = 10 }
 dynamic_title = true
-opacity = 0.98
+opacity = 1
 
-[terminal.shell]
+[shell]
 program = "/usr/bin/zsh"
 args = ["--login"]
 

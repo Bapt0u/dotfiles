@@ -8,10 +8,9 @@ Personnal collection of dotfiles managed by GNU Stow.
 - polybar
 - rofi
 - dunst
-- kitty 
+- alacritty
 - zsh
-- nitrogen 
-- picom
+- nitrogen
 - stow
 
 ## Requirements (Ubuntu)
