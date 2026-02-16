@@ -1,5 +1,5 @@
 ;-------------------------
-; Catppuccin Frappé Palette
+; Catppuccin Mocha Palette
 ; Maintainer: justTOBBI
 ;--------------------------
 
@@ -32,7 +32,6 @@
  crust = #11111b
  transparent = #FF00000
 
-[colors]
 background = ${colors.base}
 background-alt = ${colors.blue}
 foreground = ${colors.text}

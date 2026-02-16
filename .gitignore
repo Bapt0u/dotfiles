@@ -1,2 +1,7 @@
 lazy-lock.json
 *.log
+
+# Ignore the actual plugin files
+tmux/.config/tmux/plugins/
+# Except for TPM itself (optional, see below)
+!tmux/.config/tmux/plugins/tpm/
