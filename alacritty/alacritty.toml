@@ -1,0 +1,71 @@
+[window]
+padding = { x = 10, y = 10 }
+dynamic_title = true
+opacity = 0.98
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "JetBrains Mono NF"
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono NF"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrains Mono NF"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+
+[mouse]
+hide_when_typing = true
+
+# Catppuccin Mocha Colors
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+dim_foreground = "#7f849c"
+bright_foreground = "#cdd6f4"
+
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"
+
+[colors.vi_mode_cursor]
+text = "#1e1e2e"
+cursor = "#b4befe"
+
+[colors.selection]
+text = "#1e1e2e"
+background = "#f5e0dc"
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac272"
+
+[colors.bright]
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
