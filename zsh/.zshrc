@@ -71,6 +71,7 @@ fi
 [[ -n $+commands[minikube] ]] && source <(minikube completion zsh)
 [[ -d vault ]] && complete -o nospace -C /usr/local/bin/vault vault
 source ~/.oh-my-zsh/completion/*
+source <(fzf --zsh)
 
 # +--------------+
 # | User aliases |
@@ -92,3 +93,6 @@ if [[ $TMUX == "" ]]; then
 fi
 
 nerdfetch
+
+# opencode
+export PATH=/home/bapt0u/.opencode/bin:$PATH
