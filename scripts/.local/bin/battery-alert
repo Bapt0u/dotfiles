@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Config
+LOW_BATTERY_THRESHOLD=20
+CRITICAL_BATTERY_THRESHOLD=10
+BATTERY_PATH="/sys/class/power_supply/BAT0" # Check 'ls /sys/class/power_supply/' if different
+
+# Get current status
+CAPACITY=$(cat "$BATTERY_PATH/capacity")
+STATUS=$(cat "$BATTERY_PATH/status")
+
+# Only alert if discharging
+if [ "$STATUS" = "Discharging" ]; then
+    if [ "$CAPACITY" -le "$CRITICAL_BATTERY_THRESHOLD" ]; then
+        # Critical Alert: Persistent and red
+        ACTION=$(dunstify -u critical -a "System" -i "battery-empty" \
+            --action="default,Open Power Menu" \
+            "CRITICAL BATTERY: ${CAPACITY}%" "System will die soon. Action required.")
+        
+        # If the user clicks the notification, launch your rofi power menu
+        if [ "$ACTION" = "default" ]; then
+            ~/.config/rofi/scripts/powermenu.sh # Update to your actual rofi path
+        fi
+
+    elif [ "$CAPACITY" -le "$LOW_BATTERY_THRESHOLD" ]; then
+        # Low Alert: Normal urgency
+        dunstify -u normal -a "System" -i "battery-low" \
+            "Low Battery" "Energy level at ${CAPACITY}%"
+    fi
+fi
