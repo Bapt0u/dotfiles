@@ -18,6 +18,7 @@ set $mod Mod4
 font pango:JetBrainsMono Nerd Font Mono 10
 
 # kill any hanging polybar processes
+exec_always --no-startup-id ~/.local/bin/display-setup.sh
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
